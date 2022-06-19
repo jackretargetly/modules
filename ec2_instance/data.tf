@@ -7,14 +7,14 @@ data "aws_subnet" "selected" {
   id = var.subnet_id
 }
 
-data "aws_ami" "teampassimage" {
-  executable_users = ["self"]
-  most_recent      = true
-  name_regex       = "^teampassdeploy\\d{3}"
-  owners           = ["self"]
+# data "aws_ami" "teampassimage" {
+#   executable_users = ["self"]
+#   most_recent      = true
+#   name_regex       = "^teampassdeploy\\d{3}"
+#   owners           = ["self"]
 
-  filter {
-    name   = "name"
-    values = ["teampassdeploy*"]
-  }
-}
+#   filter {
+#     name   = "name"
+#     values = ["teampassdeploy*"]
+#   }
+# }
