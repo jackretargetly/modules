@@ -35,3 +35,9 @@ variable "ami" {
   type        = string
   description = "AMI to use for the instance"
 }
+
+variable "teampass_privateip" {
+  type        = string
+  description = "IP private"
+}
+
