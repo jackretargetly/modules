@@ -3,6 +3,7 @@ data "aws_vpc" "selected" {
 }
 
 data "aws_subnet" "selected" {
+  count = var.create_subnet ? 0 : 1
   id = var.subnet_id
 }
 
