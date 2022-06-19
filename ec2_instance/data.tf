@@ -2,12 +2,9 @@ data "aws_vpc" "selected" {
   id = var.vpc_id
 }
 
-
 data "aws_subnet" "selected" {
-  id = var.vpc_id
+  id = var.subnet_id
 }
-
-
 
 data "aws_ami" "teampassimage" {
   executable_users = ["self"]
