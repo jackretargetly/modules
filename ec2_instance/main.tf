@@ -27,13 +27,13 @@ resource "aws_security_group_rule" "https" {
   security_group_id = aws_security_group.teampass.id
 }
 
-resource "aws_security_group_rule" "allow_all" {
-  type              = "egress"
-  to_port           = 0
-  protocol          = "-1"
-  from_port         = 0
-  security_group_id = aws_security_group.teampass.id
-}
+# resource "aws_security_group_rule" "allow_all" {
+#   type              = "egress"
+#   to_port           = 0
+#   protocol          = "-1"
+#   from_port         = 0
+#   security_group_id = aws_security_group.teampass.id
+# }
 
 
 resource "aws_network_interface" "teampass" {
