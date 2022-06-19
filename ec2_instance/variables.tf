@@ -41,3 +41,8 @@ variable "teampass_privateip" {
   description = "IP private"
 }
 
+variable "sg_instance" {
+  type        = string
+  description = "sg name"
+}
+
