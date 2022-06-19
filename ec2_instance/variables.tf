@@ -4,7 +4,7 @@ variable "vpc_id" {
 
 variable "create_subnet" {
   type = bool
-  default = 1
+  default = true
 }
 
 variable "subnet_id" {
