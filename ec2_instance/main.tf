@@ -10,7 +10,7 @@ resource "aws_security_group" "teampass" {
 }
 
 resource "aws_network_interface" "teampass" {
-  subnet_id = var.create_subnet ? aws_subnet.teampass.id : data.aws_subnet.selected.id
+  subnet_id = var.create_subnet ? aws_subnet.teampass[0].id : data.aws_subnet.selected.id
   private_ips     = [var.teampass_privateip]
   security_groups = [aws_security_group.teampass.id]
 }
