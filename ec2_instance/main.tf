@@ -13,7 +13,7 @@ resource "aws_security_group_rule" "http" {
   type              = "ingress"
   from_port         = 80
   to_port           = 80
-  protocol          = "http"
+  protocol          = "tcp"
   cidr_blocks       = ["0.0.0.0/0"]
   security_group_id = aws_security_group.teampass.id
 }
@@ -22,7 +22,7 @@ resource "aws_security_group_rule" "https" {
   type              = "ingress"
   from_port         = 443
   to_port           = 443
-  protocol          = "http"
+  protocol          = "tcp"
   cidr_blocks       = ["0.0.0.0/0"]
   security_group_id = aws_security_group.teampass.id
 }
