@@ -1,18 +1,23 @@
-# resource "aws_instance" "base" {
-#   ami           = "ami-005e54dee72cc1d00" # us-west-2
-#   instance_type = "t2.micro"
-
-#   network_interface {
-#     network_interface_id = aws_network_interface.foo.id
-#     device_index         = 0
-#   }
-
-#   credit_specification {
-#     cpu_credits = var.cpu_credits
-#   }
-# }
-
-resource "aws_subnet" "selected" {
-  vpc_id     = aws_vpc.selected.id
+resource "aws_subnet" "teampass" {
+  count      = var.create_subnet ? 1 : 0
+  vpc_id     = data.aws_vpc.selected.id
   cidr_block = var.subnet_cdr
+}
+
+resource "aws_network_interface" "teampass" {
+  subnet_id = var.create_subnet ? aws_subnet.teampass.id : data.aws_subnet.selected.id
+}
+
+resource "aws_instance" "teampass" {
+  ami           = var.ami
+  instance_type = var.instance_type
+
+  network_interface {
+    network_interface_id = aws_network_interface.teampass.id
+    device_index         = 0
+  }
+
+  credit_specification {
+    cpu_credits = var.cpu_credits
+  }
 }

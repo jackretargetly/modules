@@ -3,7 +3,7 @@ variable "vpc_id" {
 }
 
 variable "create_subnet" {
-  type = bool
+  type    = bool
   default = true
 }
 
