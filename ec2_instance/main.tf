@@ -4,8 +4,15 @@ resource "aws_subnet" "teampass" {
   cidr_block = var.subnet_cdr
 }
 
+resource "aws_security_group" "teampass" {
+  name        = var.sg_instance
+  vpc_id      = var.vpc_id
+}
+
 resource "aws_network_interface" "teampass" {
   subnet_id = var.create_subnet ? aws_subnet.teampass.id : data.aws_subnet.selected.id
+  private_ips     = [var.teampass_privateip]
+  security_groups = [aws_security_group.teampass.id]
 }
 
 resource "aws_instance" "teampass" {
