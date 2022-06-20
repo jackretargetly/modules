@@ -40,3 +40,8 @@ variable "alb_target_group_protocol" {
 variable "instance_id" {
   type        = string
 }
+
+variable "certificate_arn" {
+  type        = string
+}
+
