@@ -9,9 +9,7 @@ variable "load_balancer_type" {
   default = "application"
 }
 
-variable "subnets_ids" {
-  type        =  list
-}
+
 variable "enable_deletion_protection" {
   type        = bool
   default = false
