@@ -55,7 +55,6 @@ resource "aws_instance" "teampass" {
     network_interface_id = aws_network_interface.teampass.id
     device_index         = 0
   }
-
   credit_specification {
     cpu_credits = var.cpu_credits
   }
