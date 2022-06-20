@@ -5,3 +5,10 @@ variable "vpc_id" {
 variable "cidr_block" {
     type = string
 }
+
+variable "availability_zone" {
+    type = string
+}
+
+
+
