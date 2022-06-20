@@ -42,10 +42,15 @@ resource "aws_network_interface" "teampass" {
   security_groups = [aws_security_group.teampass.id]
 }
 
+resource "aws_iam_instance_profile" "teampass" {
+  name = var.instance_profile_name 
+  role = var.role_name
+}
+
 resource "aws_instance" "teampass" {
   ami           = var.ami
   instance_type = var.instance_type
-
+  iam_instance_profile = aws_iam_instance_profile.teampass.name
   network_interface {
     network_interface_id = aws_network_interface.teampass.id
     device_index         = 0
@@ -55,3 +60,4 @@ resource "aws_instance" "teampass" {
     cpu_credits = var.cpu_credits
   }
 }
+

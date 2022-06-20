@@ -46,3 +46,13 @@ variable "sg_instance" {
   description = "sg name"
 }
 
+variable "role_name" {
+  type        = string
+  description = "sg name"
+}
+
+variable "instance_profile_name" {
+  type        = string
+  description = "sg name"
+  default = "ec2_teampass_profile"
+}
