@@ -34,6 +34,6 @@ resource "aws_lb" "retargetly" {
   internal           = var.internal
   load_balancer_type = var.load_balancer_type
   security_groups    = [aws_security_group.allow_tls.id]
-  subnets            = data.aws_subnet_ids.selected.ids
+  subnets            = var.aws_subnet_ids #data.aws_subnet_ids.selected.ids
   enable_deletion_protection = var.enable_deletion_protection
 }
