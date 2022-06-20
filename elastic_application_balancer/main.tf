@@ -58,7 +58,7 @@ resource "aws_lb_target_group" "teampass" {
   name     = var.alb_target_group
   port     = var.alb_target_group_port
   protocol = var.alb_target_group_protocol
-  vpc_id   = aws_vpc.main.id
+  vpc_id   = var.vpc_id
 }
 
 resource "aws_lb_target_group_attachment" "test" {
