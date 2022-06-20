@@ -2,7 +2,7 @@ variable "name" {
   type        = string
 }
 variable "internal" {
-  type        = string
+  type        = bool
 }
 variable "load_balancer_type" {
   type        = string
