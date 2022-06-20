@@ -20,3 +20,6 @@ variable "aws_subnet_ids" {
 }
 
 
+variable "vpc_id" {
+  type        = string
+}
