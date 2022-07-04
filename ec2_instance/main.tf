@@ -58,5 +58,6 @@ resource "aws_instance" "teampass" {
   credit_specification {
     cpu_credits = var.cpu_credits
   }
+  tags = var.tags
 }
 

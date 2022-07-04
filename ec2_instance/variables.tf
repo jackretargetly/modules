@@ -56,3 +56,6 @@ variable "instance_profile_name" {
   description = "sg name"
   default = "ec2_teampass_profile"
 }
+
+variable "tags" {
+}
