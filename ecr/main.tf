@@ -5,6 +5,8 @@ resource "aws_ecr_repository" "ecr" {
   image_scanning_configuration {
     scan_on_push = var.scan_on_push
   }
+  tags = var.tags
+
 }
 
 resource "aws_ecr_repository_policy" "ecrpolicy" {
@@ -39,7 +41,6 @@ resource "aws_ecr_repository_policy" "ecrpolicy" {
 }
 EOF
 
-  tags = var.tags
 }
 
 
