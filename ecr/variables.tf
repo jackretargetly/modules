@@ -7,3 +7,7 @@ variable "inmutable" {
 variable "scan_on_push" {
 }
 
+
+variable "tags" {
+}
+

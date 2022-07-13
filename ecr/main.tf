@@ -38,6 +38,8 @@ resource "aws_ecr_repository_policy" "ecrpolicy" {
     ]
 }
 EOF
+
+  tags = var.tags
 }
 
 

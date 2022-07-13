@@ -9,3 +9,7 @@ variable "path" {
 
 variable "policy" {
 }
+
+variable "tags" {
+}
+

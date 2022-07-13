@@ -50,3 +50,4 @@ variable "autoscaling_capacity_providers" {
   type        = any
   default     = {}
 }
+
